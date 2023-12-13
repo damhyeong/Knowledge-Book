@@ -3,7 +3,7 @@ import './styles.scss';
 
 const MainPage = () => {
     return (
-        <div>
+        <div className={"main-page-container"}>
             Testing MainPage at src/components/Mainpage/Mainpage.tsx
         </div>
     )
