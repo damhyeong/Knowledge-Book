@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React!! It is From Dev Branch!
+          Learn React!! It is From Dev Branch!!
         </a>
       </header>
     </div>
