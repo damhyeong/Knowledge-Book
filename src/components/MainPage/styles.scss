@@ -1,4 +1,27 @@
 .main-page-container{
   display: flex;
+  flex-direction: column;
   padding : 3rem;
+  height : 100vh;
+  background: black;
+  color: #eeeeee;
+  justify-content: center;
+  align-items: center;
+  .text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeIn 1s ease-in-out;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 }

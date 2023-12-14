@@ -1,9 +1,12 @@
 import react from "react";
+import './styels.scss'
 
 const Introduce = () => {
     return (
-        <div>
-            This is Introduce Uri. 테스팅중.
+        <div className={"container"}>
+            <div className={"text"}>
+                This is Introduce Uri. 테스팅중.
+            </div>
         </div>
     )
 }
