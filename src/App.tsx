@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainPage from "./components/MainPage/MainPage";
 import Introduce from "./components/Introduce/Introduce";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
