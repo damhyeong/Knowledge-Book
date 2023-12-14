@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainPage from "./components/MainPage/MainPage";
+import Introduce from "./components/Introduce/Introduce";
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path={"/Knowledge-Book/"} element={<MainPage/>}>
+            </Route>
+            <Route path={"/Introduce/"} element={<Introduce/>}>
 
             </Route>
         </Routes>
