@@ -3,7 +3,7 @@ import './styels.scss'
 
 const Introduce = () => {
     return (
-        <div className={"container"}>
+        <div className={"introduce-container"}>
             <div className={"text"}>
                 This is Introduce Uri. 테스팅중.
             </div>
