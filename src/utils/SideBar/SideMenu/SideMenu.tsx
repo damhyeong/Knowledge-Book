@@ -39,3 +39,4 @@ const SideMenu = ({title, itemId, onSelect, subNav} : PIFace) => {
         )
     }
 }
+export default SideMenu;

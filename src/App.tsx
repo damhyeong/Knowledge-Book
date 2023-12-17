@@ -11,7 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
             <Route path={"/Knowledge-Book/"}>
-                <Route path={"main/"} element={<MainPage/>}/>
+                <Route index element={<MainPage/>}/>
                 <Route path={"introduce/"} element={<Introduce/>}/>
                 <Route path={"posts/"}>
 
