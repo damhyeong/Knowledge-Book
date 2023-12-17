@@ -1,5 +1,5 @@
 import react from "react";
-import {Navigation} from './SideBar/index';
+import {Navigation} from './Navigation';
 
 import {useNavigate} from "react-router-dom";
 
@@ -9,7 +9,7 @@ const SideBar = () => {
         <div>
             <Navigation
                 activeItemId={"/Knowledge-Book"}
-                onSelect={({itemId}) => {
+                onSelect={(itemId) => {
                     navigate(`/Knowledge-Book${itemId}`);
                 }}
                 items={[

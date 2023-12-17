@@ -1,7 +1,7 @@
 import react from 'react';
 import './styles.scss';
 import {Link} from "react-router-dom";
-import SideBar from '../../utils/SideBar'
+import SideBar from '../../utils/SideBar/SideBar'
 
 const MainPage = () => {
     return (
