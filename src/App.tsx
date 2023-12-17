@@ -11,9 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
             <Route path={"/Knowledge-Book/"} element={<MainPage/>}>
-            </Route>
-            <Route path={"/Introduce/"} element={<Introduce/>}>
-
+                <Route path={"introduce/"} element={<Introduce/>}/>
             </Route>
         </Routes>
       </BrowserRouter>

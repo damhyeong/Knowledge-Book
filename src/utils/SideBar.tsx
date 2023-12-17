@@ -11,12 +11,12 @@ const SideBar = () => {
             <Navigation
                 activeItemId={"/Knowledge-Book/Posts"}
                 onSelect={({itemId}) => {
-                    navigate(`/Knowledge-Book/Posts/${itemId}`);
+                    navigate(`/Knowledge-Book/${itemId}`);
                 }}
                 items={[
                     {
                         title : "Introduce",
-                        itemId : "/introduce",
+                        itemId : "/Introduce",
                     }
                 ]}
             />
