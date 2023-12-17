@@ -1,4 +1,4 @@
-$sidebarWidth : 200px;
+$sidebarWidth : 300px;
 
 .main-page-container{
   display: flex;
@@ -14,6 +14,8 @@ $sidebarWidth : 200px;
     justify-content: center;
     align-items: center;
     width: $sidebarWidth;
+    height : 500px; // 추후 지우기 - custom component 확인용
+    background: gray;
   }
   .source-container{
     display: flex;

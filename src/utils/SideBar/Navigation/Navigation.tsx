@@ -1,5 +1,6 @@
 import react from "react";
 import './styles.scss';
+import SideMenu from "../SideMenu/SideMenu";
 
 interface Item {
     title : string;
@@ -14,9 +15,14 @@ interface PIFace{
 }
 
 const Navigation = ({activeItemId, onSelect, items} : PIFace) => {
+
     return (
         <div className={"side-bar-container"}>
-
+            {
+                items.map((item : Item) => (
+                    <SideMenu title={item.title} itemId={item.itemId} onSelect={onSelect}/>
+                ))
+            }
         </div>
     )
 }
