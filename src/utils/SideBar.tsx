@@ -1,7 +1,6 @@
 import react from "react";
+import {Navigation} from './SideBar/index';
 
-import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
-import {Navigation} from "react-minimal-side-navigation";
 import {useNavigate} from "react-router-dom";
 
 const SideBar = () => {
@@ -9,14 +8,32 @@ const SideBar = () => {
     return (
         <div>
             <Navigation
-                activeItemId={"/Knowledge-Book/Posts"}
+                activeItemId={"/Knowledge-Book"}
                 onSelect={({itemId}) => {
-                    navigate(`/Knowledge-Book/${itemId}`);
+                    navigate(`/Knowledge-Book${itemId}`);
                 }}
                 items={[
                     {
                         title : "Introduce",
-                        itemId : "/Introduce",
+                        itemId : "/introduce",
+                    },
+                    {
+                        title : "Posts",
+                        itemId : "/posts",
+                        subNav : [
+                            {
+                                title : "Docker",
+                                itemId : "/posts/docker",
+                            },
+                            {
+                                title : "testSubNav",
+                                itemId : "/posts/testing"
+                            }
+                        ]
+                    },
+                    {
+                        title : "testing",
+                        itemId : "/asdf"
                     }
                 ]}
             />

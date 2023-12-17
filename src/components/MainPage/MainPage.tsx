@@ -12,7 +12,7 @@ const MainPage = () => {
             <div className={"source-container"}>
                 <div className={"text-container"}>
                     <h2>Testing MainPage at src/components/Mainpage/Mainpage.tsx</h2>
-                    <h1><Link to={"introduce"}>Introduce Link!</Link></h1>
+                    <h1><Link to={"/Knowledge-Book/introduce"}>Introduce Link!</Link></h1>
                 </div>
             </div>
 

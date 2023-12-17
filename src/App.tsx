@@ -10,8 +10,12 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Routes>
-            <Route path={"/Knowledge-Book/"} element={<MainPage/>}>
+            <Route path={"/Knowledge-Book/"}>
+                <Route path={"main/"} element={<MainPage/>}/>
                 <Route path={"introduce/"} element={<Introduce/>}/>
+                <Route path={"posts/"}>
+
+                </Route>
             </Route>
         </Routes>
       </BrowserRouter>
