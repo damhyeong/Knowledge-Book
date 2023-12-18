@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Knowledge-Book/static/css/main.bf5098b7.css",
-    "main.js": "/Knowledge-Book/static/js/main.0da00f62.js",
+    "main.css": "/Knowledge-Book/static/css/main.864f8861.css",
+    "main.js": "/Knowledge-Book/static/js/main.d1154021.js",
     "static/js/787.f53c7ae3.chunk.js": "/Knowledge-Book/static/js/787.f53c7ae3.chunk.js",
     "index.html": "/Knowledge-Book/index.html",
-    "main.bf5098b7.css.map": "/Knowledge-Book/static/css/main.bf5098b7.css.map",
-    "main.0da00f62.js.map": "/Knowledge-Book/static/js/main.0da00f62.js.map",
+    "main.864f8861.css.map": "/Knowledge-Book/static/css/main.864f8861.css.map",
+    "main.d1154021.js.map": "/Knowledge-Book/static/js/main.d1154021.js.map",
     "787.f53c7ae3.chunk.js.map": "/Knowledge-Book/static/js/787.f53c7ae3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf5098b7.css",
-    "static/js/main.0da00f62.js"
+    "static/css/main.864f8861.css",
+    "static/js/main.d1154021.js"
   ]
 }
