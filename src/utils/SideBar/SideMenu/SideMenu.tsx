@@ -30,8 +30,9 @@ const SideMenu = ({title, itemId, subNav} : PIFace) => {
                     className={"side-title"}
                     onClick={() => onNavigate(itemId)}
                 >
-                    {title} 마지막
+                    {title}
                 </div>
+                <hr/>
             </div>
         )
     } else {
@@ -50,6 +51,7 @@ const SideMenu = ({title, itemId, subNav} : PIFace) => {
 
                         (<SideMenu title={item.title} itemId={item.itemId} subNav={item.subNav}/>)) }
                 </div>
+                <hr/>
             </div>
         )
     }
