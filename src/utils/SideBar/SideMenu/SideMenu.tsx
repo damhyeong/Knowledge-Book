@@ -1,5 +1,6 @@
 import react, {useCallback, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {HiArrowDown, HiArrowUp} from 'react-icons/hi2'
 import './styles.scss'
 
 interface PIFace {
@@ -43,7 +44,7 @@ const SideMenu = ({title, itemId, subNav} : PIFace) => {
                         {title}
                     </div>
                     <div className={"show-button"}>
-                        {toggle ?  ("^") : ("v")}
+                        {toggle ?  (<HiArrowUp/>) : (<HiArrowDown/>)}
                     </div>
                 </div>
                 <div className={"sub-menus"} hidden={!toggle}>
