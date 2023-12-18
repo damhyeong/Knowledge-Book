@@ -7,7 +7,7 @@ $sidebarWidth : 300px;
   height : 100vh;
   background: black;
   color: #eeeeee;
-  align-items: center;
+  align-items: start;
 
   .side-bar{
     display: flex;
@@ -33,6 +33,19 @@ $sidebarWidth : 300px;
       align-items: center;
 
       animation: fadeIn 1s ease-in-out;
+
+      .react-icon{
+        animation: App-logo-spin infinite 20s;
+      }
+
+      @keyframes App-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
       @keyframes fadeIn {
         from {
