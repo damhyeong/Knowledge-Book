@@ -8,6 +8,7 @@ interface Item {
     subNav? : Item[];
 }
 
+
 interface PIFace{
     activeItemId : string; // 기본 주소
     onSelect : (itemId : string) => void; // 기본 주소 + props로 전해진 itemId를 더한 주소로 이동.
@@ -16,12 +17,13 @@ interface PIFace{
 
 const Navigation = ({activeItemId, onSelect, items} : PIFace) => {
 
+
     return (
-        <div className={"side-bar-container"}>
+        <div className={"navigation-container"}>
             {
-                items.map((item : Item) => (
-                    <SideMenu title={item.title} itemId={item.itemId} onSelect={onSelect}/>
-                ))
+                items.map((item : Item) =>
+                    <SideMenu title={item.title} itemId={item.itemId} subNav={item.subNav}/>
+                )
             }
         </div>
     )

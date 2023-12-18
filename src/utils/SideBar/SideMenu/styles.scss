@@ -1,0 +1,19 @@
+.side-menu-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .side-title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    .title-text{
+
+    }
+    .show-button{
+
+    }
+  }
+  .sub-menus{
+    background-color: darkgray;
+  }
+}
