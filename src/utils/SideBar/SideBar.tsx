@@ -1,4 +1,5 @@
 import react from "react";
+import './styles.scss';
 import {Navigation} from './Navigation';
 
 import {useNavigate} from "react-router-dom";
@@ -6,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 const SideBar = () => {
     const navigate = useNavigate();
     return (
-        <div>
+        <div className={"side-bar-container"}>
             <Navigation
                 activeItemId={"/Knowledge-Book"}
                 onSelect={(itemId) => {

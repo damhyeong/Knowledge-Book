@@ -1,23 +1,34 @@
-import react from "react";
+import react, {useCallback, useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
+import './styles.scss'
 
 interface PIFace {
     title : string;
     itemId : string;
-    onSelect : (itemId : string) => void;
     subNav? : PIFace[];
 }
 
-const SideMenu = ({title, itemId, onSelect, subNav} : PIFace) => {
-    const isLast : boolean = (subNav === undefined); // 하위 메뉴가 없는 마지막 메뉴일 경우, Link를 활성화 시키기 위함임.
+const SideMenu = ({title, itemId, subNav} : PIFace) => {
+    const navigate = useNavigate();
+    const [toggle, setToggle] = useState<boolean>(false);
 
-    if(isLast){
+
+    const onNavigate = useCallback((itemId : string) => {
+        navigate(`/Knowledge-Book${itemId}`);
+    }, []);
+
+    const onToggle = useCallback(() => {
+        setToggle(!toggle);
+    }, [toggle]);
+
+    if(!subNav){
         return (
             <div
                 className={"side-menu-container"}
             >
                 <div
                     className={"side-title"}
-                    onClick={() => onSelect(itemId)}
+                    onClick={() => onNavigate(itemId)}
                 >
                     {title} 마지막
                 </div>
@@ -26,14 +37,18 @@ const SideMenu = ({title, itemId, onSelect, subNav} : PIFace) => {
     } else {
         return (
             <div className={"side-menu-container"}>
-                <div className={"side-title"}>
-                    {title} 마지막 아님
+                <div className={"side-title"} onClick={onToggle}>
+                    <div className={"title-text"}>
+                        {title}
+                    </div>
+                    <div className={"show-button"}>
+                        {toggle ?  ("^") : ("v")}
+                    </div>
                 </div>
-                <div>
-                    // isToggle 속성을 넣어 여기에 ^ 혹은 v 버튼을 넣는다.
-                </div>
-                <div className={"subMenus"}>
+                <div className={"sub-menus"} hidden={!toggle}>
+                    {subNav.map((item : PIFace) =>
 
+                        (<SideMenu title={item.title} itemId={item.itemId} subNav={item.subNav}/>)) }
                 </div>
             </div>
         )

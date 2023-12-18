@@ -15,6 +15,7 @@ $sidebarWidth : 300px;
     align-items: center;
     width: $sidebarWidth;
     height : 500px; // 추후 지우기 - custom component 확인용
+    overflow-y: auto;
     background: gray;
   }
   .source-container{
