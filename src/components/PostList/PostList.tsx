@@ -1,9 +1,6 @@
 import react, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import PostTitleComponent from "./PostTitleComponent/PostTitleComponent";
-import fs from 'fs' // 직접 마크다운 파일을 읽어 메타정보를 List화 시켜야 한다.
-import matter from 'gray-matter';
-import path from "path";
 
 interface MetaFace{
     title : string;
