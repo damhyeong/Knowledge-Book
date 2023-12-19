@@ -21,8 +21,8 @@ const Navigation = ({activeItemId, onSelect, items} : PIFace) => {
     return (
         <div className={"navigation-container"}>
             {
-                items.map((item : Item) =>
-                    <SideMenu title={item.title} itemId={item.itemId} subNav={item.subNav}/>
+                items.map((item : Item, index) =>
+                    <SideMenu key={index} title={item.title} itemId={item.itemId} subNav={item.subNav}/>
                 )
             }
         </div>
