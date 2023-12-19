@@ -4,7 +4,6 @@ import PostTitleComponent from "./PostTitleComponent/PostTitleComponent";
 import fs from 'fs' // 직접 마크다운 파일을 읽어 메타정보를 List화 시켜야 한다.
 import matter from 'gray-matter';
 import path from "path";
-import {getPostListInformation} from "../../../server";
 
 interface MetaFace{
     title : string;
@@ -23,7 +22,6 @@ const PostList = () => {
         console.log(rootPath + postAddress);
 
         // server Folder의 함수 사용. -> src/ 폴더 내부에서 fs, path와 같은 시스템을 건드리는 함수를 쓸 수 없음.
-        getPostListInformation(postAddress).then(response => console.log(response));
 
         setMetaList(nextMetaList);
     }, []);

@@ -14,17 +14,17 @@ import matter from "gray-matter";
  *     title,
  *     date,
  *     keyword,
+ *     path,
  * }
  * ```
- * path 정보도 가져야 할 지는 생각해보자.
  * */
 
-export const getPostListInformation = async (root) => {
-    const rootPath = "/Posts/"
-    const nextMetaList = [];
+export const getPostListInformation = async (root = "") => {
+    const rootPath = "Posts/" // public 폴더부터 시작.
+    const nextMetaList = {};
 
-    await fs.readdirSync((rootPath + root)).forEach(file => {
-        if(path.extname(file) === ".md"){
+    await fs.readdirSync((rootPath + root)).forEach((file) => {
+        if(path.extname(file) === ".md"){ // 디렉토리가 아니므로, 재귀의 마지막이다.
             // .md파일의 메타 정보를 읽은 후, metaList에 넣는다.
             fetch(file).then(response => response.text())
                 .then(text => {
@@ -32,6 +32,8 @@ export const getPostListInformation = async (root) => {
                     const meta = parsed.data;
                     nextMetaList.push(meta);
                 })
+        } else { // 디렉토리이므로, 재귀호출한다.
+
         }
     });
 
