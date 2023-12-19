@@ -22,6 +22,12 @@ const SideMenu = ({title, itemId, subNav} : PIFace) => {
         setToggle(!toggle);
     }, [toggle]);
 
+    const [numOfFile, setNumOfFile] = useState<number>(0);
+
+    useEffect(() => {
+        // 파일 시스템을 이용해 Knowled-Book/Category
+    }, [])
+
     if(!subNav){
         return (
             <div

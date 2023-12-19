@@ -24,11 +24,11 @@ const SideBar = () => {
                         subNav : [
                             {
                                 title : "Docker",
-                                itemId : "/posts/docker",
+                                itemId : "/posts/Docker",
                             },
                             {
                                 title : "testSubNav",
-                                itemId : "/posts/testing"
+                                itemId : "/posts/Testing"
                             }
                         ]
                     },
