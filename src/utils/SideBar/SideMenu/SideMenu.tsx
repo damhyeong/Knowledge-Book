@@ -54,9 +54,9 @@ const SideMenu = ({title, itemId, subNav} : PIFace) => {
                     </div>
                 </div>
                 <div className={"sub-menus"} hidden={!toggle}>
-                    {subNav.map((item : PIFace) =>
+                    {subNav.map((item : PIFace, index) =>
 
-                        (<SideMenu title={item.title} itemId={item.itemId} subNav={item.subNav}/>)) }
+                        (<SideMenu key={index} title={item.title} itemId={item.itemId} subNav={item.subNav}/>)) }
                 </div>
                 <hr/>
             </div>
