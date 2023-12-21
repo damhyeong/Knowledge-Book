@@ -15,7 +15,7 @@ const App = () => {
             <Route path={"/Knowledge-Book"}>
                 <Route index element={<MainPage/>}/>
                 <Route path={"introduce"} element={<Introduce/>}/>
-                <Route path={"posts"}>
+                <Route path={"Posts"}>
                     <Route path={":postAddress"} element={<PostList/>}/>
                 </Route>
             </Route>

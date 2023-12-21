@@ -22,15 +22,15 @@ const SideBar = () => {
                     },
                     {
                         title : "Posts",
-                        itemId : "/posts",
+                        itemId : "/Posts",
                         subNav : [
                             {
                                 title : "Docker",
-                                itemId : "/posts/Docker",
+                                itemId : "/Posts/Docker",
                             },
                             {
                                 title : "testSubNav",
-                                itemId : "/posts/Testing"
+                                itemId : "/Posts/Testing"
                             }
                         ]
                     },

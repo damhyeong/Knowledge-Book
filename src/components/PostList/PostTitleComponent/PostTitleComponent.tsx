@@ -2,16 +2,19 @@ import react from "react";
 import './styles.scss';
 
 interface PIFace{
-    key : number;
     title : string;
     date : string;
     keyword : string[];
+    path : string;
 }
 
-const PostTitleComponent = ({key, title, date, keyword} : PIFace) => {
+const PostTitleComponent = ({title, date, keyword, path} : PIFace) => {
     return (
         <div>
-
+            <div>{title}</div>
+            <div>{date}</div>
+            <div>{keyword}</div>
+            <div>{path}</div>
         </div>
     )
 }
