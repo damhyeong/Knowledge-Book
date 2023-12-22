@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainPage from "./components/MainPage/MainPage";
 import Introduce from "./components/Introduce/Introduce";
 import PostList from "./components/PostList/PostList";
+import PostPage from "./components/PostPage/PostPage";
 
 const App = () => {
   return (
@@ -16,8 +17,11 @@ const App = () => {
                 <Route index element={<MainPage/>}/>
                 <Route path={"introduce"} element={<Introduce/>}/>
                 <Route path={"Posts"}>
-                    <Route path={":postAddress"} element={<PostList/>}/>
+                    <Route path={":postJsonList"} element={<PostList/>}/>
                 </Route>
+            </Route>
+            <Route path={"/Posts"}>
+                <Route path={":postAddress"} element={<PostPage/>}/>
             </Route>
         </Routes>
       </BrowserRouter>
