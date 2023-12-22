@@ -1,4 +1,5 @@
 import react, {useEffect, useState} from "react";
+import './styles.scss'
 import {useParams} from "react-router-dom";
 import PostTitleComponent from "./PostTitleComponent/PostTitleComponent";
 import axios from "axios";
@@ -11,10 +12,13 @@ interface MetaFace{
 }
 
 interface PathIFace{
-    [key : string] : MetaFace | PathIFace;
+    [key : string] : MetaFace | PathIFace[];
 }
 
-/** 해당 카테고리에 어떤 포스트가 있는지 column으로 보여준다. */
+/** 해당 카테고리에 어떤 포스트가 있는지 column으로 보여준다.
+ *  단, Docker, Spring 등 한 차례의 Directory 후 Markdown 파일이 위치해야 한다.
+ *  추후, useParams를 사용해서 '/'를 토큰으로 분류하여 접속할 수 있도록 해야 함. -> 블로그 기능 구현
+ * */
 const PostList = () => {
     const {postAddress} = useParams();
     const [pathData, setPathData] = useState<PathIFace>();
@@ -24,23 +28,22 @@ const PostList = () => {
     useEffect(() => {
         axios.get("/Posts/PathData.json").then((response) => {
             setPathData(response.data);
-            console.log(response.data);
 
-            const data : PathIFace = response.data;
-            console.log("data : " + data);
+            const data : PathIFace = response.data; // Docker, Spring 데이터
 
-            const fileNames : string[] = Object.keys(data);
-            console.log("fileNames : " + fileNames);
+            // const fileNames : string[] = Object.keys(data);
+            const fileNames : string[] = Object.keys(data[postAddress as string]); // [1_Docker..., 2_Docker...];
 
+            const innerContent = data[postAddress as string]; // Docker 정보 가져옴. { 1_md : { ... } , 2_md : { ... } }
 
             const nextMetaList : MetaFace[] = [];
 
+
             while(fileNames.length > 0){
                 const filename = fileNames.pop() as string;
-                console.log("filename:" + filename);
-                const MdFile = data[filename];
-                console.log("MdFile");
-                console.log(MdFile);
+
+                // @ts-ignore
+                const MdFile = innerContent[filename] as MetaFace;
 
                 const info : MetaFace = {
                     title : MdFile.title as string,
@@ -51,21 +54,8 @@ const PostList = () => {
                 nextMetaList.push(info);
             }
 
-            // for(let filename : string in fileNames){ // pathData 안의 key를 순회한다.
-            //     console.log("fileName : " + filename);
-            //     const info : MetaFace = {
-            //         title : data[filename].title as string,
-            //         date : data[filename].date as string,
-            //         keyword : data[filename].keyword as string[],
-            //         path : data[filename].path as string,
-            //     }
-            //     nextMetaList.push(info);
-            // }
-
             setMetaList(nextMetaList);
         }).then()
-        console.log(postAddress);
-
 
     }, []);
 

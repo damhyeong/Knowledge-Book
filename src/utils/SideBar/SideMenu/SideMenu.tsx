@@ -15,7 +15,7 @@ const SideMenu = ({title, itemId, subNav} : PIFace) => {
 
 
     const onNavigate = useCallback((itemId : string) => {
-        navigate(`/Knowledge-Book/${itemId}`);
+        navigate(`/Knowledge-Book${itemId}`);
     }, []);
 
     const onToggle = useCallback(() => {

@@ -1,0 +1,17 @@
+.post-title-component-container{
+  display: flex;
+  flex-direction: column;
+
+  .post-title{
+    display: flex;
+    justify-content: flex-start;
+    font-size : 1.5rem;
+  }
+  .post-keywords{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .post-date{
+
+  }
+}

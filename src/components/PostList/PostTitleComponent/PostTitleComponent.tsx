@@ -1,4 +1,4 @@
-import react from "react";
+import react, {useCallback} from "react";
 import './styles.scss';
 
 interface PIFace{
@@ -9,12 +9,16 @@ interface PIFace{
 }
 
 const PostTitleComponent = ({title, date, keyword, path} : PIFace) => {
+
+    const onClickPost = useCallback(() => {
+
+    }, [])
     return (
-        <div>
-            <div>{title}</div>
-            <div>{date}</div>
-            <div>{keyword}</div>
-            <div>{path}</div>
+        <div className={"post-title-component-container"}>
+            <div className={"post-title"} onClick={onClickPost}>{title}</div>
+            <div className={"post-keywords"}>{keyword}</div>
+            <div className={"post-date"}>{date}</div>
+            <div className={"post-path"}>{path}</div>
         </div>
     )
 }
