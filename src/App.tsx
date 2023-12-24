@@ -21,7 +21,9 @@ const App = () => {
                 </Route>
             </Route>
             <Route path={"/Posts"}>
-                <Route path={":postAddress"} element={<PostPage/>}/>
+                <Route path={":category"}>
+                    <Route path={":postAddress"} element={<PostPage/>}/>
+                </Route>
             </Route>
         </Routes>
       </BrowserRouter>
