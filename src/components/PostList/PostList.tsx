@@ -61,10 +61,11 @@ const PostList = () => {
 
     return (
         <div className={"post-list-container"}>
-            {metaList.map((meta, index) =>
-                <PostTitleComponent key={index} title={meta.title} date={meta.date} keyword={meta.keyword} path={meta.path}/>
-            )}
-
+            <div className={"list-center-container"}>
+                {metaList.map((meta, index) =>
+                    <PostTitleComponent key={index} title={meta.title} date={meta.date} keyword={meta.keyword} path={meta.path}/>
+                )}
+            </div>
         </div>
     )
 }

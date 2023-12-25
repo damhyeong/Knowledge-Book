@@ -1,17 +1,46 @@
 .post-title-component-container{
   display: flex;
   flex-direction: column;
+  width: 50rem;
+  padding-top: 2rem;
 
   .post-title{
     display: flex;
     justify-content: flex-start;
+    align-content: center;
     font-size : 1.5rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-inline: 1rem;
+    border-radius: 1rem;
+
+    transition: background 0.2s;
+
+    &:hover{
+      background: #222222;
+    }
   }
   .post-keywords{
     display: flex;
     justify-content: flex-start;
+    align-content: center;
+    font-size : 1.125rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-inline: 1rem;
   }
   .post-date{
-
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    font-size : 1.125rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-inline: 1rem;
+  }
+  hr{
+    width: 100%;
   }
 }
