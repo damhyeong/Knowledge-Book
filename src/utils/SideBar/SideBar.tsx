@@ -1,11 +1,13 @@
-import react from "react";
+import react, {useEffect, useState} from "react";
 import './styles.scss';
 import {Navigation} from './Navigation';
 
 import {useNavigate} from "react-router-dom";
+import axios from "axios/index";
 
 const SideBar = () => {
     const navigate = useNavigate();
+
     return (
         <div className={"side-bar-container"}>
             <Navigation
@@ -20,15 +22,15 @@ const SideBar = () => {
                     },
                     {
                         title : "Posts",
-                        itemId : "/posts",
+                        itemId : "/Posts",
                         subNav : [
                             {
                                 title : "Docker",
-                                itemId : "/posts/Docker",
+                                itemId : "/Posts/Docker",
                             },
                             {
                                 title : "testSubNav",
-                                itemId : "/posts/Testing"
+                                itemId : "/Posts/Testing"
                             }
                         ]
                     },
