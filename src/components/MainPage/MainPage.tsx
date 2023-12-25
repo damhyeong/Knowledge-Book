@@ -10,9 +10,7 @@ const MainPage = () => {
 
     return (
         <div className={"main-page-container"}>
-            <div className={"side-bar"}>
-                <SideBar/>
-            </div>
+
             <div className={"source-container"}>
                 <div className={"text-container"}>
                     <h2>Ready To Show My Site By Making React.ts</h2>

@@ -16,7 +16,7 @@ const PostTitleComponent = ({title, date, keyword, path} : PIFace) => {
 
     const onClickPost = useCallback(() => {
         console.log(path);
-        navigate("/" + path.substring(0, path.indexOf(".md")));
+        navigate("/Knowledge-Book/" + path.substring(0, path.indexOf(".md")));
         /*axios.get("/" + path)
             .then(response => response.data)
             .then(data => {console.log(data)});*/
