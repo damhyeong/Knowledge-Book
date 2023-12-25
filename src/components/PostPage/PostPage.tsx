@@ -1,9 +1,13 @@
 import react, {useEffect, useState} from "react";
 import Markdown from "react-markdown";
 import matter from "gray-matter";
+import * as marked from 'marked';
+import {Buffer} from "buffer";
 import {MarkdownMeta} from "../../types/interface";
 import axios from "axios";
 import {useParams} from "react-router-dom";
+
+window.Buffer = Buffer;
 
 interface MetaFace{
     title : string;
@@ -27,24 +31,24 @@ const PostPage = () => {
             .then(response => response.data)
             .then(data => {
                 console.log(data);
+
                 const parsed = matter(data);
-                setMeta(parsed.data as MetaFace);
+                console.log(parsed);
                 setContent(parsed.content);
-                //setContent(marked(parsed.content))
-                console.log(parsed.data);
-                console.log(parsed.content);
-            }).catch(error => console.error('error fetching markdown : ', error))
+                setMeta(parsed.data as MetaFace);
+
+            }).finally()
     }, [postAddress, category, content]);
 
     return (
         <div>
             <div>
-                {markdownPath}
+                {markdownPath} - velog 보고 하자.
             </div>
             <div>
-
+                <Markdown>{content}</Markdown>
             </div>
-            <Markdown>{content}</Markdown>
+
         </div>
     )
 }
