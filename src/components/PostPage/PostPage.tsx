@@ -39,7 +39,7 @@ const PostPage = () => {
                 setMeta(parsed.data as MetaFace);
 
             }).finally()
-    }, [postAddress, category, content]);
+    }, [postAddress, category]);
 
     return (
         <div className={"post-page-container"}>

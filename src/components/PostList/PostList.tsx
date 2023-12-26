@@ -21,13 +21,10 @@ interface PathIFace{
  * */
 const PostList = () => {
     const {category} = useParams();
-    const [pathData, setPathData] = useState<PathIFace>();
     const [metaList, setMetaList] = useState<MetaFace[]>([]);
-    const rootPath : string = "/Posts/"
 
     useEffect(() => {
         axios.get("/Knowledge-Book/Posts/PathData.json").then((response) => {
-            setPathData(response.data);
 
             const data : PathIFace = response.data; // Docker, Spring 데이터
 
@@ -55,9 +52,10 @@ const PostList = () => {
             }
 
             setMetaList(nextMetaList);
-        }).then()
+        })
 
-    }, [pathData]);
+    }, [category]);
+
 
     return (
         <div className={"post-list-container"}>
