@@ -7,8 +7,12 @@ interface PIFace{
 
 const PostKeyword = ({keyword} : PIFace) => {
     return (
-        <div className={"post-keywords-container"}>
-
+        <div className={"post-keyword-container"}>
+            <div className={"keyword-border"}>
+                <div className={"keyword-text"}>
+                    {keyword}
+                </div>
+            </div>
         </div>
     )
 }
