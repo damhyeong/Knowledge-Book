@@ -18,10 +18,8 @@ const App = () => {
                 <Route index element={<MainPage/>}/>
                 <Route path={"introduce"} element={<Introduce/>}/>
                 <Route path={"Posts"}>
-                    <Route path={":postJsonList"} element={<PostList/>}/>
-                </Route>
-                <Route path={"Posts"}>
                     <Route path={":category"}>
+                        <Route index element={<PostList/>}/>
                         <Route path={":postAddress"} element={<PostPage/>}/>
                     </Route>
                 </Route>
