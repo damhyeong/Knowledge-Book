@@ -29,8 +29,8 @@ const SideBar = () => {
                                 itemId : "/Posts/Docker",
                             },
                             {
-                                title : "testSubNav",
-                                itemId : "/Posts/Testing"
+                                title : "Spring",
+                                itemId : "/Posts/Spring"
                             }
                         ]
                     },

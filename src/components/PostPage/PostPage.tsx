@@ -1,11 +1,12 @@
 import react, {useEffect, useState} from "react";
 import Markdown from "react-markdown";
 import matter from "gray-matter";
-import * as marked from 'marked';
-import {Buffer} from "buffer";
-import {MarkdownMeta} from "../../types/interface";
 import axios from "axios";
 import {useParams} from "react-router-dom";
+import PostKeyword from "../PostList/PostTitleComponent/PostKeyword/PostKeyword";
+import './styles.scss'
+
+import {Buffer} from "buffer";
 
 window.Buffer = Buffer;
 
@@ -41,11 +42,20 @@ const PostPage = () => {
     }, [postAddress, category, content]);
 
     return (
-        <div>
-            <div>
-                {markdownPath} - velog 보고 하자.
+        <div className={"post-page-container"}>
+            <div className={"post-page-header"}>
+                <div className={"post-title"}>
+                    {meta.title}
+                </div>
+                <div className={"post-date"}>
+                    {meta.date}
+                </div>
+                <div className={"post-keywords"}>
+                    {meta.keyword.map((keyword, index) => <PostKeyword keyword={keyword}/>)}
+                </div>
             </div>
-            <div>
+            <hr/>
+            <div className={"markdown-content"}>
                 <Markdown>{content}</Markdown>
             </div>
 

@@ -1,6 +1,14 @@
 .post-list-container{
   display: flex;
   flex-direction: column;
-
-
+  justify-items: center;
+  align-items: center;
+  margin-top: 3rem;
+  background: none;
+  width: 100%;
+  .list-center-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
 }

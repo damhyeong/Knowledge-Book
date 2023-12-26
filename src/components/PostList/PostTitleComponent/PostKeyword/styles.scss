@@ -1,0 +1,19 @@
+.post-keyword-container{
+  display: flex;
+  padding: 0.25rem;
+  .keyword-border{
+    border: 2px solid white;
+    border-radius: 7px;
+    transition: background 0.3s;
+
+    &:hover{
+      background: #aaaaaa;
+    }
+
+    .keyword-text{
+      display: flex;
+      padding: 0.4rem;
+      color : lightgreen;
+    }
+  }
+}
