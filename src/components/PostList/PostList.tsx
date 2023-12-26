@@ -20,21 +20,21 @@ interface PathIFace{
  *  추후, useParams를 사용해서 '/'를 토큰으로 분류하여 접속할 수 있도록 해야 함. -> 블로그 기능 구현
  * */
 const PostList = () => {
-    const {postJsonList} = useParams();
+    const {category} = useParams();
     const [pathData, setPathData] = useState<PathIFace>();
     const [metaList, setMetaList] = useState<MetaFace[]>([]);
     const rootPath : string = "/Posts/"
 
     useEffect(() => {
-        axios.get("/Posts/PathData.json").then((response) => {
+        axios.get("/Knowledge-Book/Posts/PathData.json").then((response) => {
             setPathData(response.data);
 
             const data : PathIFace = response.data; // Docker, Spring 데이터
 
             // const fileNames : string[] = Object.keys(data);
-            const fileNames : string[] = Object.keys(data[postJsonList as string]); // [1_Docker..., 2_Docker...];
+            const fileNames : string[] = Object.keys(data[category as string]); // [1_Docker..., 2_Docker...];
 
-            const innerContent = data[postJsonList as string]; // Docker 정보 가져옴. { 1_md : { ... } , 2_md : { ... } }
+            const innerContent = data[category as string]; // Docker 정보 가져옴. { 1_md : { ... } , 2_md : { ... } }
 
             const nextMetaList : MetaFace[] = [];
 

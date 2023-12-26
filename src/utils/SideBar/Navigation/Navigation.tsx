@@ -20,7 +20,7 @@ const Navigation = ({activeItemId, onSelect, items} : PIFace) => {
     const [pathData, setPathData] = useState({});
 
     useEffect(() => {
-        axios.get("/Posts/PathData.json").then((response) => {
+        axios.get("/Knowledge-Book/Posts/PathData.json").then((response) => {
             console.log(response.data);
             console.log(response.data);
             setPathData(response.data);
