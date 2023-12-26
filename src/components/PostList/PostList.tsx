@@ -57,7 +57,7 @@ const PostList = () => {
             setMetaList(nextMetaList);
         }).then()
 
-    }, []);
+    }, [pathData]);
 
     return (
         <div className={"post-list-container"}>

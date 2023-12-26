@@ -16,7 +16,6 @@ const PostTitleComponent = ({title, date, keyword, path} : PIFace) => {
     const onClickPost = useCallback(() => {
         console.log(path);
         navigate("/Knowledge-Book/" + path.substring(0, path.indexOf(".md")));
-
     }, [])
     return (
         <div className={"post-title-component-container"}>
