@@ -28,16 +28,14 @@ const PostPage = () => {
 
     useEffect(() => {
         setMarkdownPath(`/Knowledge-Book/Posts/${category}/${postAddress}.md`);
-        axios.get(`/Knowledge-Book/Posts/${category}/${postAddress}.md`)
+        axios.get(`/Posts/${category}/${postAddress}.md`)
             .then(response => response.data)
             .then(data => {
                 console.log(data);
-
                 const parsed = matter(data);
                 console.log(parsed);
                 setContent(parsed.content);
                 setMeta(parsed.data as MetaFace);
-
             }).finally()
     }, [postAddress, category]);
 
