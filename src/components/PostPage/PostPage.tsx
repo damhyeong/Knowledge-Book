@@ -30,9 +30,10 @@ const PostPage = () => {
     });
     const {postAddress, category} = useParams();
 
-    // const isProduction = process.env.NODE_ENV === 'production';
-    // const fileExtension = isProduction ? '' : '.md';
-    // const path = `/Knowledge-Book/Posts/${category}/${postAddress}${fileExtension}.md`;
+    /* 아래 코드는 jekyll 환경에서 production 될 경우, .md 파일이 아닌, 파일 명으로만 info를 가져와야 할 경우 쓴다.
+    const isProduction = process.env.NODE_ENV === 'production';
+    const fileExtension = isProduction ? '' : '.md';
+    const path = `/Knowledge-Book/Posts/${category}/${postAddress}${fileExtension}.md`;*/
     const path = `/Knowledge-Book/Posts/${category}/${postAddress}.md`;
 
     const [markdownPath, setMarkdownPath] = useState('');
