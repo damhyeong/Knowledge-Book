@@ -1,5 +1,9 @@
 import react, {useEffect, useState} from "react";
 import Markdown from "react-markdown";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter"
+// import {dark} from "react-syntax-highlighter/dist/esm/styles/prism";
+import {a11yDark} from "react-syntax-highlighter/dist/esm/styles/prism";
+
 import matter from "gray-matter";
 import axios from "axios";
 import {useParams} from "react-router-dom";
@@ -7,6 +11,7 @@ import PostKeyword from "../PostList/PostTitleComponent/PostKeyword/PostKeyword"
 import './styles.scss'
 
 import {Buffer} from "buffer";
+import React from "react";
 
 window.Buffer = Buffer;
 
@@ -70,7 +75,29 @@ const PostPage = () => {
             </div>
             <hr/>
             <div className={"markdown-content"}>
-                <Markdown>{content}</Markdown>
+                <Markdown
+                    children={content}
+                    components={{
+                        code(props) {
+                            const {children, className, node, ...rest} = props
+                            const match = /language-(\w+)/.exec(className || '')
+                            return match ? (
+                                <SyntaxHighlighter
+                                    {...rest}
+                                    PreTag="div"
+                                    children={String(children).replace(/\n$/, '')}
+                                    language={match[1]}
+                                    style={a11yDark}
+                                    ref={undefined}
+                                />
+                            ) : (
+                                <code {...rest} className={className}>
+                                    {children}
+                                </code>
+                            )
+                        }
+                    }}
+                />
             </div>
 
         </div>
