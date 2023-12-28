@@ -45,23 +45,33 @@ const PostPage = () => {
 
     return (
         <div className={"post-page-container"}>
-            <div className={"post-page-header"}>
-                <div className={"post-title"}>
-                    {meta.title}
-                </div>
-                <div className={"post-date"}>
-                    {meta.date}
-                </div>
-                <div className={"post-keywords"}>
-                    {meta.keyword.map((keyword, index) => <PostKeyword keyword={keyword}/>)}
-                </div>
-            </div>
-            <hr/>
+
             <div className={"markdown-content"}>
                 <Markdown>{content}</Markdown>
             </div>
 
         </div>
     )
+
+    // return (
+    //     <div className={"post-page-container"}>
+    //         <div className={"post-page-header"}>
+    //             <div className={"post-title"}>
+    //                 {meta.title}
+    //             </div>
+    //             <div className={"post-date"}>
+    //                 {meta.date}
+    //             </div>
+    //             <div className={"post-keywords"}>
+    //                 {meta.keyword.map((keyword, index) => <PostKeyword keyword={keyword}/>)}
+    //             </div>
+    //         </div>
+    //         <hr/>
+    //         <div className={"markdown-content"}>
+    //             <Markdown>{content}</Markdown>
+    //         </div>
+    //
+    //     </div>
+    // )
 }
 export default PostPage;
