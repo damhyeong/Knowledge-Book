@@ -19,7 +19,7 @@ interface MetaFace{
 const PostPage = () => {
     const [content, setContent] = useState<string>('');
     const [meta, setMeta] = useState<MetaFace>({
-        title : 'asdf',
+        title : '',
         date : '',
         keyword : [''],
     });
@@ -28,7 +28,7 @@ const PostPage = () => {
 
     useEffect(() => {
         setMarkdownPath(`/Knowledge-Book/Posts/${category}/${postAddress}.md`);
-        axios.get(`/Posts/${category}/${postAddress}.md`)
+        axios.get(`Knowledge-Book/Posts/${category}/${postAddress}.md`)
             .then(response => response.data)
             .then(data => {
                 console.log(data);
@@ -36,8 +36,12 @@ const PostPage = () => {
                 console.log(parsed);
                 setContent(parsed.content);
                 setMeta(parsed.data as MetaFace);
-            }).finally()
+            }).finally();
     }, [postAddress, category]);
+
+    useEffect(() => {
+
+    }, [meta]);
 
     return (
         <div className={"post-page-container"}>
