@@ -44,13 +44,7 @@ const PostPage = () => {
     }, [meta]);
 
     return (
-        <div className={"post-page-container"}>
-
-            <div className={"markdown-content"}>
-                <Markdown>{content}</Markdown>
-            </div>
-
-        </div>
+        <Markdown>{content}</Markdown>
     )
 
     // return (
