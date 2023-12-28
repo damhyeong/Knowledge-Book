@@ -37,7 +37,7 @@ const PostPage = () => {
                 setContent(parsed.content);
                 setMeta(parsed.data as MetaFace);
             }).finally();
-    }, [postAddress, category]);
+    }, [postAddress]);
 
     useEffect(() => {
 
