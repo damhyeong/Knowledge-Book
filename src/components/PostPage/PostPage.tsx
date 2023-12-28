@@ -28,7 +28,7 @@ const PostPage = () => {
 
     useEffect(() => {
         setMarkdownPath(`/Knowledge-Book/Posts/${category}/${postAddress}.md`);
-        axios.get(`/Knowledge-Book/Posts/${category}/${postAddress}.md`)
+        axios.get(`/Knowledge-Book/Posts/${category}/${postAddress}`)
             .then(response => response.data)
             .then(data => {
                 console.log(data);
