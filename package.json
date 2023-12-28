@@ -35,7 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "echo > build/.nojekyll && gh-pages -b main -d out -t true"
+    "deploy": "echo > build/.nojekyll && gh-pages -b main -d build -t true"
   },
   "homepage": "https://damhyeong.github.io/Knowledge-Book/",
   "eslintConfig": {
