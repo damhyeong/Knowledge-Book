@@ -24,11 +24,16 @@ const PostPage = () => {
         keyword : [''],
     });
     const {postAddress, category} = useParams();
+
+    const isProduction = process.env.NODE_ENV === 'production';
+    const fileExtension = isProduction ? '' : '.md';
+    const path = `/Knowledge-Book/Posts/${category}/${postAddress}${fileExtension}`;
+
     const [markdownPath, setMarkdownPath] = useState('');
 
     useEffect(() => {
         setMarkdownPath(`/Knowledge-Book/Posts/${category}/${postAddress}`);
-        axios.get(`/Knowledge-Book/Posts/${category}/${postAddress}`)
+        axios.get(path)
             .then(response => response.data)
             .then(data => {
                 console.log(data);
@@ -43,29 +48,31 @@ const PostPage = () => {
 
     }, [meta]);
 
-    return (
-        <Markdown>{content}</Markdown>
-    )
-
     // return (
-    //     <div className={"post-page-container"}>
-    //         <div className={"post-page-header"}>
-    //             <div className={"post-title"}>
-    //                 {meta.title}
-    //             </div>
-    //             <div className={"post-date"}>
-    //                 {meta.date}
-    //             </div>
-    //             <div className={"post-keywords"}>
-    //                 {meta.keyword.map((keyword, index) => <PostKeyword keyword={keyword}/>)}
-    //             </div>
-    //         </div>
-    //         <hr/>
-    //         <div className={"markdown-content"}>
-    //             <Markdown>{content}</Markdown>
-    //         </div>
-    //
+    //     <div>
+    //         {content}
     //     </div>
     // )
+
+    return (
+        <div className={"post-page-container"}>
+            <div className={"post-page-header"}>
+                <div className={"post-title"}>
+                    {meta.title}
+                </div>
+                <div className={"post-date"}>
+                    {meta.date}
+                </div>
+                <div className={"post-keywords"}>
+                    {meta.keyword.map((keyword, index) => <PostKeyword key={index} keyword={keyword}/>)}
+                </div>
+            </div>
+            <hr/>
+            <div className={"markdown-content"}>
+                <Markdown>{content}</Markdown>
+            </div>
+
+        </div>
+    )
 }
 export default PostPage;
