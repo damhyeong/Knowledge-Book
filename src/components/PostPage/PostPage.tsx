@@ -19,7 +19,7 @@ interface MetaFace{
 const PostPage = () => {
     const [content, setContent] = useState<string>('');
     const [meta, setMeta] = useState<MetaFace>({
-        title : '',
+        title : 'asdf',
         date : '',
         keyword : [''],
     });
