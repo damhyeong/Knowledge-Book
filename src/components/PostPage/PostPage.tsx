@@ -36,8 +36,8 @@ const PostPage = () => {
                 console.log(parsed);
                 setContent(parsed.content);
                 setMeta(parsed.data as MetaFace);
-            }).finally();
-    }, [postAddress]);
+            });
+    }, []);
 
     useEffect(() => {
 
