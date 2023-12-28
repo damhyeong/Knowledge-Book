@@ -64,9 +64,9 @@ const PostPage = () => {
                 <div className={"post-date"}>
                     {meta.date}
                 </div>
-                {/*<div className={"post-keywords"}>*/}
-                {/*    {meta.keyword.map((keyword, index) => <PostKeyword key={index} keyword={keyword}/>)}*/}
-                {/*</div>*/}
+                <div className={"post-keywords"}>
+                    {meta.keyword.map((keyword, index) => <PostKeyword key={index} keyword={keyword}/>)}
+                </div>
             </div>
             <hr/>
             <div className={"markdown-content"}>
