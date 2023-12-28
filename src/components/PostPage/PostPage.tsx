@@ -25,9 +25,10 @@ const PostPage = () => {
     });
     const {postAddress, category} = useParams();
 
-    const isProduction = process.env.NODE_ENV === 'production';
-    const fileExtension = isProduction ? '' : '.md';
-    const path = `/Knowledge-Book/Posts/${category}/${postAddress}${fileExtension}`;
+    // const isProduction = process.env.NODE_ENV === 'production';
+    // const fileExtension = isProduction ? '' : '.md';
+    // const path = `/Knowledge-Book/Posts/${category}/${postAddress}${fileExtension}.md`;
+    const path = `/Knowledge-Book/Posts/${category}/${postAddress}.md`;
 
     const [markdownPath, setMarkdownPath] = useState('');
 
