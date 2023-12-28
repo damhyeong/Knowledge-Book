@@ -93,7 +93,7 @@ const pathData = await testGetPostListInformation().then((response) =>{
 });
 */
 
-async function testGetPostListInformation(rootPath = "../public/Posts/") {
+async function testGetPostListInformation(rootPath = "./public/Posts/") {
     const metaFileList = {};
     const files = await fs.readdir(rootPath);
 

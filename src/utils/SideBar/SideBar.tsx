@@ -17,6 +17,10 @@ const SideBar = () => {
                 }}
                 items={[
                     {
+                        title : "Main",
+                        itemId : "/",
+                    },
+                    {
                         title : "Introduce",
                         itemId : "/introduce",
                     },
@@ -34,10 +38,6 @@ const SideBar = () => {
                             }
                         ]
                     },
-                    {
-                        title : "testing",
-                        itemId : "/asdf"
-                    }
                 ]}
             />
         </div>
