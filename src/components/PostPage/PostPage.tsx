@@ -1,10 +1,16 @@
 import react, {useEffect, useState} from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+import rehypeHighlight from "rehype-highlight";
+import Markdown from "react-markdown";
 
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter"
-//import {dark} from "react-syntax-highlighter/dist/esm/styles/prism";
+import {dark} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {a11yDark} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {github} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import {a11yLight, vs2015} from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import {dracula} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 import matter from "gray-matter";
 import axios from "axios";
@@ -14,9 +20,6 @@ import './styles.scss'
 
 import {Buffer} from "buffer";
 import React from "react";
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
-import Markdown from "react-markdown";
 
 window.Buffer = Buffer;
 
@@ -100,6 +103,7 @@ const PostPage = () => {
                     }}
                 />
             </div>
+
         </div>
 
     )
